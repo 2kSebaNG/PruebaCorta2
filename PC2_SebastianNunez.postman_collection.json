@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "55bf02ba-6073-4d14-b40e-0ba049b279cd",
+		"name": "PC2_SebastianNunez",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30508365"
+	},
+	"item": [
+		{
+			"name": "Get chairs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{chair}}",
+					"host": [
+						"{{chair}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get chair by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{chair}}/silla7",
+					"host": [
+						"{{chair}}"
+					],
+					"path": [
+						"silla7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update chair",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"silla4\",\r\n    \"tipo\": \"gamer\",\r\n    \"material\": \"metal\",\r\n    \"color\": \"verde\",\r\n    \"altura\": 2,\r\n    \"anchura\": 2,\r\n    \"profundidad\": 2,\r\n    \"precio\": 1000,\r\n    \"stock\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{chair}}/2",
+					"host": [
+						"{{chair}}"
+					],
+					"path": [
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create chair",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"silla3\",\r\n    \"tipo\": \"gamer\",\r\n    \"material\": \"metal\",\r\n    \"color\": \"verde\",\r\n    \"altura\": 2,\r\n    \"anchura\": 2,\r\n    \"profundidad\": 2,\r\n    \"precio\": 1000,\r\n    \"stock\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{chair}}",
+					"host": [
+						"{{chair}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Increase stock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{chair}}/1/stock?increase=1",
+					"host": [
+						"{{chair}}"
+					],
+					"path": [
+						"1",
+						"stock"
+					],
+					"query": [
+						{
+							"key": "increase",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete chair",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{chair}}/4",
+					"host": [
+						"{{chair}}"
+					],
+					"path": [
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buy a chair",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{chair}}/purchase?id=1&quantity=1&totalPrice=1000",
+					"host": [
+						"{{chair}}"
+					],
+					"path": [
+						"purchase"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"description": "The id of the chair to buy"
+						},
+						{
+							"key": "quantity",
+							"value": "1",
+							"description": "The amount of chairs to buy"
+						},
+						{
+							"key": "totalPrice",
+							"value": "1000",
+							"description": "The total price of the purchase"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "chair",
+			"value": "http://localhost:5275/api/chair",
+			"type": "string"
+		}
+	]
+}
